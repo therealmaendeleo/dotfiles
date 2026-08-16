@@ -1,0 +1,31 @@
+/* =============================================================================
+   EVERFOREST LIGHT PALETTE
+   ============================================================================= */
+
+@define-color text_main #5c6a72;
+@define-color text_dark #3a464c;
+@define-color text_muted #939f91;
+
+/* Матовый матовый фон для островов */
+@define-color module_bg rgba(244, 238, 219, 0.65);
+@define-color module_bg_hover rgba(253, 246, 227, 0.85);
+
+/* Границы с бликом */
+@define-color border_main rgba(255, 255, 255, 0.6);
+@define-color border_top rgba(255, 255, 255, 0.9);
+@define-color border_hover rgba(255, 255, 255, 1.0);
+
+/* Тени */
+@define-color module_shadow rgba(92, 106, 114, 0.08);
+
+/* Воркспейсы */
+@define-color ws_hover rgba(234, 226, 203, 0.6);
+@define-color ws_active #8da101;
+@define-color ws_active_text #fdf6e3;
+@define-color ws_active_shadow rgba(141, 161, 1, 0.3);
+
+/* Статусы и акценты */
+@define-color accent_green #35a77c;
+@define-color accent_warning #dfa000;
+@define-color accent_urgent #f57d26;
+@define-color accent_error #e67e80;

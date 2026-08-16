@@ -1,0 +1,31 @@
+/* =============================================================================
+   GRUVBOX GREEN DARK PALETTE
+   ============================================================================= */
+
+@define-color text_main #ebdbb2;
+@define-color text_dark #fbf1c7;
+@define-color text_muted #928374;
+
+/* Тёмный матовый полупрозрачный фон */
+@define-color module_bg rgba(40, 40, 40, 0.75);
+@define-color module_bg_hover rgba(60, 56, 54, 0.85);
+
+/* Тёмные границы с легким световым бликом */
+@define-color border_main rgba(255, 255, 255, 0.08);
+@define-color border_top rgba(255, 255, 255, 0.15);
+@define-color border_hover rgba(255, 255, 255, 0.25);
+
+/* Глубокие тени для тёмной темы */
+@define-color module_shadow rgba(0, 0, 0, 0.35);
+
+/* Воркспейсы */
+@define-color ws_hover rgba(80, 73, 69, 0.6);
+@define-color ws_active #b8bb26;
+@define-color ws_active_text #282828;
+@define-color ws_active_shadow rgba(184, 187, 38, 0.3);
+
+/* Статусы и акценты */
+@define-color accent_green #8ec07c;
+@define-color accent_warning #fabd2f;
+@define-color accent_urgent #fe8019;
+@define-color accent_error #fb4934;
