@@ -22,7 +22,7 @@ fi
 
 alias cls='clear'
 alias cat='bat'
-alias clipcopy='xclip -selection clipboard'
+alias ff='fastfetch'
 
 # Shows top 5 memory consuming applications, grouped by name
 topmem_func() {
