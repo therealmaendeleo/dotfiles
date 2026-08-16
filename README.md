@@ -1,12 +1,7 @@
-My dot files for `~/.config` directory — hyprland, waybar, alacritty, tmux etc.
-
-## Screenshots
-
 | Dark Mode (Gruvbox) | Light Mode (Everforest) |
 | :---: | :---: |
 | ![Dark Theme](./media/dark.png) | ![Light Theme](./media/light.png) |
 
----
 
 ### Stack
 
