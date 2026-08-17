@@ -19,8 +19,8 @@
 
 ```bash
 sudo pacman -S --needed \
-  hyprland waybar swaybg hyprlock \
-  alacritty tmux zsh rofi nautilus loupe \
+  hyprland waybar swaybg hyprlock hypridle \
+  alacritty tmux zsh rofi nautilus loupe obsidian \
   polkit-kde-agent network-manager-applet brightnessctl \
   wl-clipboard papirus-icon-theme ttf-nerd-fonts-symbols \
   nwg-look git wpctl fastfetch bat
