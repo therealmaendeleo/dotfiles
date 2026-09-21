@@ -24,25 +24,23 @@ elif [ "$MODE" = "enable-auto" ]; then
 else
     echo "Использование:"
     echo "  $0 auto        - Автопереключение по времени"
-    echo "  $0 light       - Включить светлую (до перезагрузки)"
-    echo "  $0 dark        - Включить тёмную (до перезагрузки)"
+    echo "  $0 light       - Включить светлую"
+    echo "  $0 dark        - Включить тёмную"
     echo "  $0 enable-auto - Вернуть автоматический режим"
     exit 1
 fi
 
-# 2. Настройка названий тем, обоев и палитры Waybar
-WAYBAR_CONF="$HOME/.config/waybar"
-
+# 2. Настройка названий тем и обоев (с использованием $HOME)
 if [ "$TARGET_MODE" = "light" ]; then
     GTK_THEME="Everforest-B-MB-Light"
     COLOR_SCHEME="prefer-light"
-    WALLPAPER="/home/maendeleo/Pictures/wallpaper-light.jpeg"
-    WAYBAR_COLOR="$WAYBAR_CONF/color-light.css"
+    WALLPAPER="$HOME/Pictures/wallpaper-light.jpeg"
+    SWAYOSD_STYLE="$HOME/.config/swayosd/style-light.css"
 elif [ "$TARGET_MODE" = "dark" ]; then
     GTK_THEME="Gruvbox-Green-Dark"
     COLOR_SCHEME="prefer-dark"
-    WALLPAPER="/home/maendeleo/Pictures/wallpaper-dark.jpg"
-    WAYBAR_COLOR="$WAYBAR_CONF/color-dark.css"
+    WALLPAPER="$HOME/Pictures/wallpaper-dark.jpg"
+    SWAYOSD_STYLE="$HOME/.config/swayosd/style-dark.css"
 fi
 
 # 3. Применение темы через gsettings и GTK3
@@ -59,31 +57,15 @@ if [ -f "$GTK3_CONF" ]; then
     fi
 fi
 
-# 4. Обновление стилей GTK4 из системной директории (ОТКЛЮЧЕНО)
-# THEME_DIR="/usr/share/themes/$GTK_THEME"
-# SOURCE_DIR=""
-
-# if [ -d "$THEME_DIR/gtk-4.0" ]; then
-#     SOURCE_DIR="$THEME_DIR/gtk-4.0"
-# elif [ -d "$THEME_DIR/gtk-3.0" ]; then
-#     SOURCE_DIR="$THEME_DIR/gtk-3.0"
-# fi
-
-# if [ -n "$SOURCE_DIR" ]; then
-#     rm -rf ~/.config/gtk-4.0
-#     mkdir -p ~/.config/gtk-4.0
-#     cp -rL "$SOURCE_DIR/"* ~/.config/gtk-4.0/ 2>/dev/null
-# fi
-
-# 5. Обновление палитры Waybar и его перезапуск
-if [ -f "$WAYBAR_COLOR" ]; then
-    cp "$WAYBAR_COLOR" "$WAYBAR_CONF/colors.css"
-    pkill waybar
-    nohup waybar >/dev/null 2>&1 &
-fi
-
-# 6. Смена обоев
+# 4. Смена обоев
 if [ -f "$WALLPAPER" ]; then
-    pkill swaybg
-    nohup swaybg -i "$WALLPAPER" -m fill >/dev/null 2>&1 &
+    pkill swaybg 2>/dev/null
+    swaybg -i "$WALLPAPER" -m fill >/dev/null 2>&1 &
 fi
+
+# 5. Надежный перезапуск swayosd-server
+killall -9 swayosd-server 2>/dev/null
+sleep 0.5
+
+# Запуск сервера с валидными флагами
+swayosd-server --top-margin 0.85 --style "$SWAYOSD_STYLE" >/dev/null 2>&1 &

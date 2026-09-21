@@ -1,8 +1,11 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 33,
-    "margin-top": 6,
+    "height": 20,
+    "mode": "hide",
+    "start_hidden": true,
+    "modifier-reset": "press",
+    "margin-top": 4,
     "margin-left": 10,
     "margin-right": 10,
     "spacing": 2,
