@@ -23,7 +23,7 @@ sudo pacman -S --needed \
   alacritty tmux zsh rofi nautilus loupe obsidian \
   polkit-kde-agent network-manager-applet brightnessctl \
   wl-clipboard papirus-icon-theme ttf-nerd-fonts-symbols \
-  nwg-look git wpctl fastfetch bat
+  nwg-look git fastfetch bat swayosd socat jq swaync
 ```
 
 2. Clone dotfiles
