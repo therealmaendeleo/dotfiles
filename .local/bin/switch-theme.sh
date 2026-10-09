@@ -61,6 +61,7 @@ fi
 if [ -f "$WALLPAPER" ]; then
     pkill swaybg 2>/dev/null
     swaybg -i "$WALLPAPER" -m fill >/dev/null 2>&1 &
+    ln -sf "$WALLPAPER" "$HOME/.config/hypr/current_wallpaper.jpg"
 fi
 
 # 5. Надежный перезапуск swayosd-server
