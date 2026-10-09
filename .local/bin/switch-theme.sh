@@ -70,3 +70,6 @@ sleep 0.5
 
 # Запуск сервера с валидными флагами
 swayosd-server --top-margin 0.85 --style "$SWAYOSD_STYLE" >/dev/null 2>&1 &
+
+# Сохраняем текущий режим для Vim и других утилит
+echo "$TARGET_MODE" > "$HOME/.config/hypr/current_theme_mode"
