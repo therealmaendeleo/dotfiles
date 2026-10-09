@@ -9,7 +9,15 @@ if [ -n "$BAT_PATH" ]; then
 
     # Выбираем иконку в зависимости от статуса и уровня
     if [ "$STATUS" = "Charging" ]; then
-        ICON="battery-charging"
+	ROUNDED_CAP=$(( (CAPACITY / 10) * 10))
+
+	if [ "$ROUNDED_CAP" -lt 100 ]; then 
+	    FORMATTED_CAP=$(printf "%03d" "$ROUNDED_CAP")
+	else
+	    FORMATTED_CAP="$ROUNDED_CAP"
+	fi
+	
+        ICON="battery-${FORMATTED_CAP}-charging"
         TEXT="Зарядка: ${CAPACITY}%"
     elif [ "$CAPACITY" -le 15 ]; then
         ICON="battery-caution"
