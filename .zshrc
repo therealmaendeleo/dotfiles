@@ -91,3 +91,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export GOOGLE_CLOUD_PROJECT="phonic-monolith-477317-a4"
 alias dotfiles='/usr/bin/git --git-dir=/home/maendeleo/.cfg/ --work-tree=/home/maendeleo'
+
+alias vpnup="sudo awg-quick up wg0"
+alias vpndown="sudo awg-quick down wg0"
+alias vpnstat="ip addr show wg0"
