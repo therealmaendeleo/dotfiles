@@ -1,6 +1,0 @@
-[submodule ".config/alacritty/alacritty-auto-theme"]
-	path = .config/alacritty/alacritty-auto-theme
-	url = /home/maendeleo/.config/alacritty/alacritty-auto-theme
-[submodule ".config/alacritty/themes"]
-	path = .config/alacritty/themes
-	url = /home/maendeleo/.config/alacritty/themes
