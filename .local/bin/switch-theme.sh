@@ -57,19 +57,25 @@ if [ -f "$GTK3_CONF" ]; then
     fi
 fi
 
-# 4. Смена обоев
+# 4. Смена обоев (с защитой от зависания процесса)
 if [ -f "$WALLPAPER" ]; then
     pkill swaybg 2>/dev/null
-    swaybg -i "$WALLPAPER" -m fill >/dev/null 2>&1 &
+    nohup swaybg -i "$WALLPAPER" -m fill >/dev/null 2>&1 &
     ln -sf "$WALLPAPER" "$HOME/.config/hypr/current_wallpaper.jpg"
 fi
 
-# 5. Надежный перезапуск swayosd-server
+# 5. Надежный перезапуск swayosd-server (без проблемных флагов позиционирования)
 killall -9 swayosd-server 2>/dev/null
-sleep 0.5
+sleep 0.3
 
-# Запуск сервера с валидными флагами
-swayosd-server --top-margin 0.85 --style "$SWAYOSD_STYLE" >/dev/null 2>&1 &
+# Проверяем наличие кастомного файла стилей, иначе запускаем без него
+# if [ -f "$SWAYOSD_STYLE" ]; then
+#     nohup swayosd-server --style "$SWAYOSD_STYLE" >/dev/null 2>&1 &
+# else
+#     nohup swayosd-server >/dev/null 2>&1 &
+# fi
+
+nohup swayosd-server >/dev/null 2>&1 &i
 
 # Сохраняем текущий режим для Vim и других утилит
 echo "$TARGET_MODE" > "$HOME/.config/hypr/current_theme_mode"
