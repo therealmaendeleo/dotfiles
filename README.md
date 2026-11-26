@@ -33,7 +33,7 @@ sudo pacman -S --needed \
 Optional GUI utilities (not referenced by any active config):
 
 ```bash
-sudo pacman -S --needed loupe obsidian nwg-look
+sudo pacman -S --needed loupe obsidian
 ```
 
 2. Clone dotfiles
