@@ -8,8 +8,8 @@ TERM = "alacritty"
 size = 14
 
 [window]
-decorations = "full"
-dynamic_padding = true
+decorations = "none"
+dynamic_padding = false
 opacity = 1
 
 [window.padding]
