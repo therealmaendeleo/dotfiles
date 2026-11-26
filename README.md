@@ -76,16 +76,30 @@ vim +PlugInstall +qall
 Run Firefox once so a profile exists, then:
 
 ```bash
-~/.local/bin/install-firefox-userjs.sh
+~/.local/bin/install-firefox-profile.sh
 ```
 
-This symlinks `.config/firefox/user.js` into the active profile. On a fresh system, close Firefox and run the script with `--restore-prefs` to copy the saved `prefs.js` snapshot into the profile before restarting:
+This symlinks `.config/firefox/user.js` into the active profile. For a full migration, close Firefox and run:
 
 ```bash
-~/.local/bin/install-firefox-userjs.sh --restore-prefs
+~/.local/bin/install-firefox-profile.sh --restore-all
 ```
 
-`prefs.js` alone does not install extensions; copy the profile's `extensions/` directory and `extensions.json` as well for a full migration.
+`--dry-run` prints the actions without changing anything. Extensions are downloaded from the pinned `sourceURI` URLs in `.config/firefox/extensions.json`, so XPI binaries are not stored in git.
+
+### Firefox profile snapshot
+
+Portable parts of the active profile live under `.config/firefox/`:
+
+```text
+user.js                     durable settings, applied on every startup (overrides prefs.js)
+prefs.js                    snapshot of the live profile, with $HOME replaced by @@HOME@@
+extensions.json             extension manifest with pinned sourceURI URLs and enabled state
+addons.json                 addon metadata
+extension-preferences.json  extension permissions and origins
+```
+
+`storage/`, `logins.db`, cookies, sync data and per-extension internal data are deliberately not stored. Run `--restore-all` with Firefox closed; `user.js` is applied again on the next start.
 
 ### Alacritty themes
 
@@ -121,7 +135,7 @@ dotsave "message" new/file        # same, plus a new file
 
 ### Deliberately not stored
 
-Caches, shell/browser histories, runtime state (`current_theme_mode`, `current_wallpaper.jpg`, generated `theme.toml`, GTK settings rewritten by the theme script), plugin directories, GTK theme archives, large binaries, and Firefox profile directories (databases, caches, live `prefs.js`). Portable snapshots of `user.js` and `prefs.js` live in `.config/firefox/`.
+Caches, shell/browser histories, runtime state (`current_theme_mode`, `current_wallpaper.jpg`, generated `theme.toml`, GTK settings rewritten by the theme script), plugin directories, GTK theme archives, large binaries, and Firefox profile directories (databases, caches, live `prefs.js`, `logins.db`, `storage/`). The portable snapshot lives in `.config/firefox/`.
 
 ### Rofi
 
