@@ -121,6 +121,3 @@ alias cat='bat'
 # Алиасы для переключения тем
 alias light="~/.local/bin/switch-theme.sh light"
 alias dark="~/.local/bin/switch-theme.sh dark"
-
-# Dotfiles helper functions (ordinary repo in ~/.config)
-[ -f "$HOME/.config/dotfiles/helpers.sh" ] && . "$HOME/.config/dotfiles/helpers.sh"

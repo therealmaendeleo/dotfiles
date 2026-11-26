@@ -31,6 +31,3 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
 [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 path+=("$HOME"/.nvm/versions/node/*/bin(N))
-
-# Dotfiles helper functions (ordinary repo in ~/.config)
-[[ -f "$HOME/.config/dotfiles/helpers.sh" ]] && source "$HOME/.config/dotfiles/helpers.sh"

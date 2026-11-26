@@ -1,6 +1,6 @@
 # Dotfiles
 
-Configs for `~/.config`. The repository root **is** `~/.config`; app configs live directly at the root (`hypr/`, `alacritty/`, `tmux/`, `rofi/`, `firefox/`, `htop/`, `systemd/user/`, `dotfiles/`).
+Configs for `~/.config`. The repository root **is** `~/.config`; app configs live directly at the root (`hypr/`, `alacritty/`, `tmux/`, `rofi/`, `firefox/`, `htop/`, `systemd/user/`).
 
 ## Stack
 
@@ -150,20 +150,6 @@ alacritty/themes/themes/everforest_light_soft.toml
 - `dark` → `rofi/colors/gruvbox.rasi`
 
 Dark Rofi intentionally matches the GTK/system theme. Close and reopen Rofi after switching themes.
-
-## Daily workflow
-
-Helpers live in `dotfiles/helpers.sh` and are sourced from both `.zshrc` and `.bashrc`:
-
-```bash
-dotstatus                      # short status
-dotuntracked                   # untracked files in key repo dirs
-dotadd path/to/new/file        # stage a new file explicitly
-dotsave "message"              # stage tracked changes, commit, pull --rebase, push
-dotsave "message" new/file     # same, plus a new file
-```
-
-`dotadd` without arguments stages only already-tracked files. Helpers call `git -C "$HOME/.config"` directly; there is no `dotfiles` wrapper command anymore. Use plain `git -C "$HOME/.config" ...` for anything else.
 
 ## Deliberately not stored
 
