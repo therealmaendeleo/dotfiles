@@ -1,6 +1,8 @@
 # Everforest Dark Soft — limited palette, rounded widgets
 # Colors: bg #333c43, fg #d3c6aa, muted #4d5960 (all from the Vim/Alacritty theme)
 set -g status-style "bg=#333c43,fg=#d3c6aa"
+set -g status-bg "#333c43"
+set -g status-fg "#d3c6aa"
 set -g status-left "#[fg=#4d5960,bg=#333c43]#[fg=#d3c6aa,bg=#4d5960]#{s|/home/maendeleo|~|:pane_current_path} #[fg=#4d5960,bg=#333c43]"
 set -g status-right "#[fg=#4d5960,bg=#333c43]#[fg=#d3c6aa,bg=#4d5960]%d.%m %H:%M #[fg=#4d5960,bg=#333c43]"
 set -g status-justify left
