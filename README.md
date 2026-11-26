@@ -23,11 +23,17 @@ Hyprland uses **`~/.config/hypr/hyprland.lua`** as its entrypoint; modular files
 
 ```bash
 sudo pacman -S --needed \
-  hyprland swaybg hyprlock hypridle \
-  alacritty tmux vim zsh rofi nautilus loupe obsidian \
-  polkit-kde-agent network-manager-applet brightnessctl \
-  wl-clipboard papirus-icon-theme ttf-nerd-fonts-symbols \
-  nwg-look git fastfetch bat swayosd socat jq swaync
+  hyprland swaybg hyprlock hypridle grim slurp \
+  alacritty tmux vim zsh rofi nautilus \
+  brightnessctl wl-clipboard papirus-icon-theme \
+  ttf-meslo-nerd-font-powerlevel10k \
+  git fastfetch bat swayosd jq swaync
+```
+
+Optional GUI utilities (not referenced by any active config):
+
+```bash
+sudo pacman -S --needed loupe obsidian nwg-look
 ```
 
 2. Clone dotfiles
