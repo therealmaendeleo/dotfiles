@@ -1,9 +1,5 @@
 # Dotfiles
 
-| Dark Mode (Gruvbox) | Light Mode (Everforest) |
-| :---: | :---: |
-| ![Dark Theme](./media/dark.png) | ![Light Theme](./media/light.png) |
-
 ### Stack
 
 * **OS:** [Manjaro Linux](https://manjaro.org/)
