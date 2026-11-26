@@ -4,7 +4,7 @@ set -g status-style "bg=#f3ead3,fg=#5c6a72"
 set -g status-bg "#f3ead3"
 set -g status-fg "#5c6a72"
 set -g status-left "#[fg=#d8d3ba,bg=#f3ead3]#[fg=#5c6a72,bg=#d8d3ba]#{s|/home/maendeleo|~|:pane_current_path} #[fg=#d8d3ba,bg=#f3ead3]"
-set -g status-right "#[fg=#d8d3ba,bg=#f3ead3]#[fg=#5c6a72,bg=#d8d3ba]%d.%m %H:%M #[fg=#d8d3ba,bg=#f3ead3]"
+set -g status-right "#[fg=#d8d3ba,bg=#f3ead3]#[fg=#5c6a72,bg=#d8d3ba]%d.%m #[fg=#5c6a72,bg=#d8d3ba,bold]%H:%M #[nobold]#[fg=#d8d3ba,bg=#f3ead3]"
 set -g status-justify left
 set -g status-left-length 45
 set -g status-right-length 28
