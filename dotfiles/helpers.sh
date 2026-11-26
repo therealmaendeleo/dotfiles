@@ -1,26 +1,22 @@
 # Helper functions for the ordinary dotfiles repository in ~/.config.
 # Source from ~/.zshrc and ~/.bashrc.
 
-dotfiles() {
-  command git -C "$HOME/.config" "$@"
-}
-
 dotstatus() {
-  dotfiles status --short
+  command git -C "$HOME/.config" status --short
 }
 
 dotuntracked() {
   if [ "$#" -eq 0 ]; then
     set -- hypr rofi tmux alacritty firefox htop dotfiles systemd/user config media bin
   fi
-  dotfiles ls-files --others --exclude-standard -- "$@"
+  command git -C "$HOME/.config" ls-files --others --exclude-standard -- "$@"
 }
 
 # Stages tracked modifications; new files must be named explicitly.
 dotadd() {
-  dotfiles add -u || return 1
+  command git -C "$HOME/.config" add -u || return 1
   if [ "$#" -gt 0 ]; then
-    dotfiles add -- "$@" || return 1
+    command git -C "$HOME/.config" add -- "$@" || return 1
   fi
 }
 
@@ -31,9 +27,11 @@ dotsave() {
   [ -n "$msg" ] || { printf '%s\n' "Usage: dotsave 'msg' [new-file ...]" >&2; return 2; }
 
   dotadd "$@" || return 1
-  dotfiles diff --cached --quiet && { printf '%s\n' 'Nothing to commit'; return 0; }
+  command git -C "$HOME/.config" diff --cached --quiet && { printf '%s\n' 'Nothing to commit'; return 0; }
 
-  dotfiles commit -m "$msg" && dotfiles pull --rebase && dotfiles push
+  command git -C "$HOME/.config" commit -m "$msg" &&
+    command git -C "$HOME/.config" pull --rebase &&
+    command git -C "$HOME/.config" push
 }
 
 # Shows top 5 memory consuming applications, grouped by name.

@@ -163,7 +163,7 @@ dotsave "message"              # stage tracked changes, commit, pull --rebase, p
 dotsave "message" new/file     # same, plus a new file
 ```
 
-`dotadd` without arguments stages only already-tracked files. `dotfiles` now runs `git -C "$HOME/.config"`.
+`dotadd` without arguments stages only already-tracked files. Helpers call `git -C "$HOME/.config"` directly; there is no `dotfiles` wrapper command anymore. Use plain `git -C "$HOME/.config" ...` for anything else.
 
 ## Deliberately not stored
 
