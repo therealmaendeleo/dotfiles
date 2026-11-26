@@ -93,5 +93,9 @@ augroup theme_mode_sync
     autocmd FocusGained * call <SID>ApplyTheme()
 augroup END
 
+if has('timers')
+    call timer_start(2000, {-> <SID>ApplyTheme()}, {'repeat': -1})
+endif
+
 " Памятка на русском: открывается командой :Guide
 command! Guide edit ~/.vim/GUIDE.ru.md
