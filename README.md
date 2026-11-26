@@ -71,6 +71,22 @@ systemctl --user enable --now "$HOME/.config/systemd/user/AlacrittyAutoTheme.ser
 vim +PlugInstall +qall
 ```
 
+6. Apply Firefox settings
+
+Run Firefox once so a profile exists, then:
+
+```bash
+~/.local/bin/install-firefox-userjs.sh
+```
+
+This symlinks `.config/firefox/user.js` into the active profile. On a fresh system, close Firefox and run the script with `--restore-prefs` to copy the saved `prefs.js` snapshot into the profile before restarting:
+
+```bash
+~/.local/bin/install-firefox-userjs.sh --restore-prefs
+```
+
+`prefs.js` alone does not install extensions; copy the profile's `extensions/` directory and `extensions.json` as well for a full migration.
+
 ### Alacritty themes
 
 The full upstream theme collection is **not** stored in this repository. Only the two colorschemes actually used are tracked:
@@ -105,7 +121,7 @@ dotsave "message" new/file        # same, plus a new file
 
 ### Deliberately not stored
 
-Caches, shell/browser histories, runtime state (`current_theme_mode`, `current_wallpaper.jpg`, generated `theme.toml`, GTK settings rewritten by the theme script), plugin directories, GTK theme archives, large binaries, and Firefox profile data except `prefs.js`/`user.js`.
+Caches, shell/browser histories, runtime state (`current_theme_mode`, `current_wallpaper.jpg`, generated `theme.toml`, GTK settings rewritten by the theme script), plugin directories, GTK theme archives, large binaries, and Firefox profile directories (databases, caches, live `prefs.js`). Portable snapshots of `user.js` and `prefs.js` live in `.config/firefox/`.
 
 ### Rofi
 
