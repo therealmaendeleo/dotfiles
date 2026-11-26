@@ -1,1 +1,24 @@
-set -g @tmux2k-theme 'onedark'
+# Everforest Dark Soft — matches Vim and Alacritty in dark mode
+set -g status-style "bg=#333c43,fg=#d3c6aa"
+set -g status-left "#[fg=#333c43,bg=#a7c080,bold]#{s|/home/maendeleo|~|:pane_current_path} "
+set -g status-right "#[fg=#7fbbb3]%d.%m  #[fg=#a7c080]%H:%M "
+set -g status-justify left
+set -g status-left-length 45
+set -g status-right-length 24
+
+set -g window-status-style "fg=#d3c6aa,bg=#333c43"
+set -g window-status-format " #I:#W "
+set -g window-status-current-style "fg=#333c43,bg=#a7c080,bold"
+set -g window-status-current-format "#[fg=#333c43,bg=#a7c080,bold] #I:#W "
+set -g window-status-last-style "fg=#a7c080,bg=#333c43"
+set -g window-status-activity-style "fg=#dbbc7f,bg=#333c43"
+set -g window-status-bell-style "fg=#e67e80,bg=#333c43"
+set -g window-status-separator ""
+
+set -g pane-border-style "fg=#4d5960"
+set -g pane-active-border-style "fg=#a7c080"
+set -g message-style "fg=#d3c6aa,bg=#4d5960"
+set -g mode-style "fg=#333c43,bg=#a7c080"
+set -g display-panes-colour "#4d5960"
+set -g display-panes-active-colour "#a7c080"
+set -g clock-mode-colour "#a7c080"

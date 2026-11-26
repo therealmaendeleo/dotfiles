@@ -79,3 +79,6 @@ nohup swayosd-server >/dev/null 2>&1 &
 
 # Сохраняем текущий режим для Vim и других утилит
 echo "$TARGET_MODE" > "$HOME/.config/hypr/current_theme_mode"
+
+# Подхватываем палитру tmux без перезапуска сессии
+tmux source-file "$HOME/.config/tmux/tmux.conf" >/dev/null 2>&1 || true
