@@ -5,10 +5,10 @@ general.live_config_reload = true
 TERM = "alacritty"
 
 [font]
-size = 16.3
+size = 15
 
 [font.normal]
-family = "Noto Sans Mono"
+family = "Hack Nerd Font"
 
 [window]
 decorations = "none"
