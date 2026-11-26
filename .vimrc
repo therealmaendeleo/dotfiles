@@ -56,6 +56,21 @@ augroup markdown_surround
     autocmd FileType markdown let b:surround_42 = "**\r**"
 augroup END
 
+" --- Имя файла в заголовке панели (tmux читает его через OSC) ---
+set title
+function! s:UpdateTitle() abort
+  let &titlestring = ''
+  let &titlestring = expand('%:t') . (&modified ? ' [+]' : '') . ' - Vim'
+endfunction
+augroup filename_title
+  autocmd!
+  autocmd BufEnter,TextChanged,TextChangedI,InsertLeave,BufWritePost * call <SID>UpdateTitle()
+augroup END
+call <SID>UpdateTitle()
+if has('timers')
+  call timer_start(1000, {-> <SID>UpdateTitle()}, {'repeat': -1})
+endif
+
 " --- Цвета ---
 if has('termguicolors')
     set termguicolors

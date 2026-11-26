@@ -10,9 +10,9 @@ set -g status-left-length 45
 set -g status-right-length 28
 
 set -g window-status-style "fg=#5c6a72,bg=#f3ead3"
-set -g window-status-format " #I:#W "
+set -g window-status-format " #{?#{==:#{pane_current_command},vim},#{T;=/28:pane_title},#I:#W} "
 set -g window-status-current-style "fg=#f3ead3,bg=#5c6a72,bold"
-set -g window-status-current-format "#[fg=#f3ead3,bg=#5c6a72,bold] #I:#W "
+set -g window-status-current-format "#[fg=#f3ead3,bg=#5c6a72,bold] #{?#{==:#{pane_current_command},vim},#{T;=/28:pane_title},#I:#W} "
 set -g window-status-last-style "fg=#5c6a72,bg=#f3ead3,bold"
 set -g window-status-activity-style "fg=#dfa000,bg=#f3ead3"
 set -g window-status-bell-style "fg=#f85552,bg=#f3ead3"
