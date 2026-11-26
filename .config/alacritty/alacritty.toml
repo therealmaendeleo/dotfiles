@@ -5,7 +5,10 @@ general.live_config_reload = true
 TERM = "alacritty"
 
 [font]
-size = 14.1
+size = 16.3
+
+[font.normal]
+family = "Noto Sans Mono"
 
 [window]
 decorations = "none"
