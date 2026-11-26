@@ -101,4 +101,11 @@ dotsave "message" new/file        # same, plus a new file
 
 Caches, shell/browser histories, runtime state (`current_theme_mode`, `current_wallpaper.jpg`, generated `theme.toml`, GTK settings rewritten by the theme script), plugin directories, GTK theme archives, large binaries, and Firefox profile data except `prefs.js`/`user.js`.
 
-Rofi currently imports the `onedark` palette via `~/.config/rofi/launchers/type-1/shared/colors.rasi`; `everforest.rasi` and `gruvbox.rasi` are included if you want to wire Rofi into the theme switcher later.
+### Rofi
+
+`SUPER + D` runs `~/.local/bin/rofi-menu.sh`, which picks the palette from `~/.config/hypr/current_theme_mode`:
+
+- `light` → `.config/rofi/colors/everforest_light_soft.rasi` (matches Alacritty/Vim Everforest Light Soft);
+- `dark` → `.config/rofi/colors/gruvbox.rasi` (matches the GTK/system Gruvbox dark theme).
+
+The mode file is written by `switch-theme.sh`; if it is missing, the helper falls back to `gsettings`. Rofi reads its theme at launch, so close and reopen an already running Rofi after switching.

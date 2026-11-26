@@ -55,11 +55,14 @@
 .config/rofi/colors/*
 !.config/rofi/colors/onedark.rasi
 !.config/rofi/colors/everforest.rasi
+!.config/rofi/colors/everforest_light_soft.rasi
 !.config/rofi/colors/gruvbox.rasi
 .config/rofi/launchers/*
 !.config/rofi/launchers/type-1/
 .config/rofi/launchers/type-1/*
 !.config/rofi/launchers/type-1/style-3.rasi
+!.config/rofi/launchers/type-1/theme-light.rasi
+!.config/rofi/launchers/type-1/theme-dark.rasi
 !.config/rofi/launchers/type-1/shared/
 .config/rofi/launchers/type-1/shared/*
 !.config/rofi/launchers/type-1/shared/colors.rasi

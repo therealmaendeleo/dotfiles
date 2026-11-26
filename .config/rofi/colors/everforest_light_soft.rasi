@@ -1,0 +1,14 @@
+/**
+ * Everforest Light Soft palette for Rofi.
+ * Matches ~/.config/alacritty/themes/themes/everforest_light_soft.toml
+ * and Vim's Everforest `soft` background.
+ **/
+
+* {
+    background:     #f3ead3ff;
+    background-alt: #e8dec3ff;
+    foreground:     #5c6a72ff;
+    selected:       #3a94c5ff;
+    active:         #8da101ff;
+    urgent:         #f85552ff;
+}
