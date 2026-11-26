@@ -35,3 +35,47 @@ dotsave() {
 
   dotfiles commit -m "$msg" && dotfiles pull --rebase && dotfiles push
 }
+
+# Shows top 5 memory consuming applications, grouped by name.
+topmem() {
+    ps -eo rss,args --no-headers |
+    awk '{
+        rss = $1;
+        cmd = $2;
+        app_name = cmd;
+
+        # For interpreters, find the script name to use as the app name
+        if (cmd ~ /\/(python|node|java|perl|ruby)[0-9.]*$/) {
+            for (i = 3; i <= NF; i++) {
+                # Find first argument that is not an option and looks like a path/script
+                if ($i !~ /^-/ && $i ~ /[\/\.]/) {
+                    app_name = $i;
+                    break;
+                }
+            }
+        }
+
+        # Group all kernel threads together
+        if (cmd ~ /^\[.*\]$/) {
+            app_name = "Kernel Threads";
+        }
+
+        # Sum RSS and count processes for each unique application name
+        rss_sum[app_name] += rss;
+        count[app_name]++;
+    }
+    END {
+        for (app in rss_sum) {
+            # Print in a machine-sortable format with a tab separator
+            printf "%f\t%s (%d processes)\n", rss_sum[app], app, count[app];
+        }
+    }' |
+    sort -rn | # Sort numerically in reverse
+    head -n 5 | # Take the top 5
+    awk -F'\t' '{
+        # Format the final output into a clean table
+        rss_kb = $1;
+        rest = $2;
+        printf "%10.2f MB | %s\n", rss_kb/1024, rest;
+    }'
+}
