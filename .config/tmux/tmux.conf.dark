@@ -1,0 +1,1 @@
+set -g @tmux2k-theme 'onedark'

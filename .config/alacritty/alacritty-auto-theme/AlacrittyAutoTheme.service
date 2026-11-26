@@ -1,10 +1,10 @@
 [Unit]
 Description=Alacritty automated theme switching based on Gnome system theme
-Require=dbus.service
+Requires=dbus.service
 After=dbus.service
 
 [Service]
-ExecStart=/bin/bash /home/%u/.config/alacritty/alacritty-auto-theme/AlacrittyAutoTheme.sh
+ExecStart=/bin/bash %h/.config/alacritty/alacritty-auto-theme/AlacrittyAutoTheme.sh
 Type=simple
 Restart=on-failure
 
