@@ -31,7 +31,7 @@
 .config/tmux/tmux.conf.save
 .local/bin/toggle-vpn.sh
 .local/bin/md5
-.config/waybar/examples/
+.config/waybar/
 .themes/
 .local/bin/emeraldian
 .local/bin/claude

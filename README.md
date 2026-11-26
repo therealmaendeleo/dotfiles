@@ -8,7 +8,7 @@
 
 * **OS:** [Manjaro Linux](https://manjaro.org/)
 * **WM:** [Hyprland](https://github.com/hyprwm/hyprland)
-* **Bar:** [Waybar](https://github.com/alexays/waybar)
+* **Notifications/OSD:** swaync + swayosd
 * **Terminal:** [Alacritty](https://github.com/alacritty/alacritty)
 * **App Launcher:** [Rofi](https://github.com/davatorium/rofi)
 * **Shell:** [Zsh](https://github.com/zsh-users/zsh)
@@ -23,7 +23,7 @@ Hyprland uses **`~/.config/hypr/hyprland.lua`** as its entrypoint; modular files
 
 ```bash
 sudo pacman -S --needed \
-  hyprland waybar swaybg hyprlock hypridle \
+  hyprland swaybg hyprlock hypridle \
   alacritty tmux vim zsh rofi nautilus loupe obsidian \
   polkit-kde-agent network-manager-applet brightnessctl \
   wl-clipboard papirus-icon-theme ttf-nerd-fonts-symbols \

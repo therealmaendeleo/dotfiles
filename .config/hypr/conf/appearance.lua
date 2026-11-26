@@ -80,7 +80,3 @@ hl.animation({
     style   = "slide"
 })
 
-hl.layer_rule({
-    match = { namespace = "waybar" },
-    blur  = true,
-})

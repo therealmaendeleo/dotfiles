@@ -84,7 +84,6 @@ alias ta="tmux attach-session"
 
 alias idea="~/.local/share/JetBrains/Toolbox/apps/intellij-idea/bin/idea.sh"
 
-alias rw='pkill waybar; waybar > /dev/null 2>&1 &!'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
