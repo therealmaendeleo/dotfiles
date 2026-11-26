@@ -19,6 +19,10 @@ hl.bind("SHIFT + Alt_L", hl.dsp.exec_cmd("~/.local/bin/switch-layout.sh"))
 -- Windows
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
 
+-- Master split ratio
+hl.bind(mainMod .. " + MINUS", hl.dsp.layout("mfact -0.05"))
+hl.bind(mainMod .. " + EQUAL", hl.dsp.layout("mfact +0.05"))
+
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))

@@ -8,7 +8,7 @@ hl.monitor({
 
 hl.config({
     general = {
-        gaps_in     = 2,
+        gaps_in     = 0,
         gaps_out    = 0,
         border_size = 2,
 
@@ -20,7 +20,14 @@ hl.config({
             inactive_border = "rgba(4e4e4eff)",
         },
 
-        layout = "dwindle",
+        layout = "master",
+    },
+
+    master = {
+        mfact       = 0.7,
+        new_status  = "slave",
+        new_on_top  = true,
+        orientation = "left",
     },
 
     decoration = {
