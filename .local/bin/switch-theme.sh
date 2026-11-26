@@ -75,7 +75,7 @@ sleep 0.3
 #     nohup swayosd-server >/dev/null 2>&1 &
 # fi
 
-nohup swayosd-server >/dev/null 2>&1 &i
+nohup swayosd-server >/dev/null 2>&1 &
 
 # Сохраняем текущий режим для Vim и других утилит
 echo "$TARGET_MODE" > "$HOME/.config/hypr/current_theme_mode"
