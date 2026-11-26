@@ -34,12 +34,12 @@ fi
 if [ "$TARGET_MODE" = "light" ]; then
     GTK_THEME="Everforest-B-MB-Light"
     COLOR_SCHEME="prefer-light"
-    WALLPAPER="$HOME/Pictures/wallpaper-light.jpeg"
+    WALLPAPER="$HOME/.config/hypr/wallpaper-light.jpeg"
     SWAYOSD_STYLE="$HOME/.config/swayosd/style-light.css"
 elif [ "$TARGET_MODE" = "dark" ]; then
     GTK_THEME="Gruvbox-Green-Dark"
     COLOR_SCHEME="prefer-dark"
-    WALLPAPER="$HOME/Pictures/wallpaper-dark.jpg"
+    WALLPAPER="$HOME/.config/hypr/wallpaper-dark.jpg"
     SWAYOSD_STYLE="$HOME/.config/swayosd/style-dark.css"
 fi
 

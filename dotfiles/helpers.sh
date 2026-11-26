@@ -1,8 +1,8 @@
-# Helper functions for the bare dotfiles repository in ~/.cfg.
+# Helper functions for the ordinary dotfiles repository in ~/.config.
 # Source from ~/.zshrc and ~/.bashrc.
 
 dotfiles() {
-  command git --git-dir="$HOME/.cfg" --work-tree="$HOME" "$@"
+  command git -C "$HOME/.config" "$@"
 }
 
 dotstatus() {
@@ -11,7 +11,7 @@ dotstatus() {
 
 dotuntracked() {
   if [ "$#" -eq 0 ]; then
-    set -- .config/hypr .config/rofi .config/tmux .vim .local/bin .config/systemd/user
+    set -- hypr rofi tmux alacritty firefox htop dotfiles systemd/user config media bin
   fi
   dotfiles ls-files --others --exclude-standard -- "$@"
 }
