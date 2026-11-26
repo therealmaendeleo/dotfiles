@@ -1,24 +1,25 @@
-# Everforest Light Soft — matches Vim and Alacritty in light mode
+# Everforest Light Soft — limited palette, rounded widgets
+# Colors: bg #f3ead3, fg #5c6a72, muted #d8d3ba (all from the Vim/Alacritty theme)
 set -g status-style "bg=#f3ead3,fg=#5c6a72"
-set -g status-left "#[fg=#5c6a72,bg=#8da101,bold]#{s|/home/maendeleo|~|:pane_current_path} "
-set -g status-right "#[fg=#3a94c5]%d.%m  #[fg=#8da101]%H:%M "
+set -g status-left "#[fg=#d8d3ba,bg=#f3ead3]#[fg=#5c6a72,bg=#d8d3ba]#{s|/home/maendeleo|~|:pane_current_path} #[fg=#d8d3ba,bg=#f3ead3]"
+set -g status-right "#[fg=#d8d3ba,bg=#f3ead3]#[fg=#5c6a72,bg=#d8d3ba]%d.%m %H:%M #[fg=#d8d3ba,bg=#f3ead3]"
 set -g status-justify left
 set -g status-left-length 45
-set -g status-right-length 24
+set -g status-right-length 28
 
 set -g window-status-style "fg=#5c6a72,bg=#f3ead3"
 set -g window-status-format " #I:#W "
-set -g window-status-current-style "fg=#5c6a72,bg=#8da101,bold"
-set -g window-status-current-format "#[fg=#5c6a72,bg=#8da101,bold] #I:#W "
-set -g window-status-last-style "fg=#8da101,bg=#f3ead3"
+set -g window-status-current-style "fg=#f3ead3,bg=#5c6a72,bold"
+set -g window-status-current-format "#[fg=#f3ead3,bg=#5c6a72,bold] #I:#W "
+set -g window-status-last-style "fg=#5c6a72,bg=#f3ead3,bold"
 set -g window-status-activity-style "fg=#dfa000,bg=#f3ead3"
 set -g window-status-bell-style "fg=#f85552,bg=#f3ead3"
 set -g window-status-separator ""
 
 set -g pane-border-style "fg=#d8d3ba"
-set -g pane-active-border-style "fg=#8da101"
-set -g message-style "fg=#5c6a72,bg=#e8dec3"
-set -g mode-style "fg=#f3ead3,bg=#8da101"
+set -g pane-active-border-style "fg=#5c6a72"
+set -g message-style "fg=#f3ead3,bg=#5c6a72"
+set -g mode-style "fg=#f3ead3,bg=#5c6a72"
 set -g display-panes-colour "#d8d3ba"
-set -g display-panes-active-colour "#8da101"
-set -g clock-mode-colour "#8da101"
+set -g display-panes-active-colour "#5c6a72"
+set -g clock-mode-colour "#5c6a72"
